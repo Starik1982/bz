@@ -142,7 +142,7 @@ CKEDITOR_CONFIGS = {
 
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'media', 'static')
 
 try:
    from .settings_prod import *
