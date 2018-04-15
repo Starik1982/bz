@@ -1,0 +1,62 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% block list_news %}
+	
+	<div class="row" id="news-row">
+	        <div class="col-md-12" id="news-head">
+	            <h3><A id='a_title' href="{% url 'list_video' 1 %}">Видео</A></h3>
+	        </div>
+	        {% for this_video in list_video %}
+			<div class="col-md-12" id="video-colm">
+				<h4>{{this_video.title}}</h4>
+	
+				{% autoescape off%}{{this_video.preview_video}}{% endautoescape %}
+				<h6>{{this_video.date}}</h6>
+			</div>
+			{% endfor %}
+	</div>
+
+
+            
+	<div class="row">
+	  	<div id="pagination-head">
+	  		<ul class ="pagination pagination-sm">
+		  		{% if list_video.has_previous %}
+		  			<li><a id= "a_pagination" href="{% url 'list_video'  list_video.previous_page_number %}">&laquo;</a></li>
+		  		{% else %}
+		  			<li><a id='a_pagination' href="">&laquo;</a></li>
+		  		{% endif %}
+
+					{% for page in list_video.paginator.page_range %}
+				  
+				  {% if page == list_video.number %}
+				 <li><a id='a_active_pagination' href="{% url 'list_video'  page %}">{{ page }}</a></li>		 
+				  {% else %}
+				  	<li ><a id='a_pagination' href="{% url 'list_video'  page %}">{{ page }}</a></li>
+				  {% endif %}
+				  {% endfor %}
+				  {% if list_video.has_next %}
+		        <li><a id='a_pagination' href="{% url 'list_video'  list_video.next_page_number %}">&raquo;</a></li>
+		      	{% else %}
+	        	<li><a id='a_pagination' href="">&raquo;</a></li>
+	      {% endif %}
+	      </ul>
+	    </div>
+	</div>
+{% endblock %}
+
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

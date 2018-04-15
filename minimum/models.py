@@ -1,0 +1,34 @@
+from django.db import models
+from ckeditor.fields import RichTextField
+
+
+class News(models.Model):
+
+	title = models.CharField(max_length = 64, blank = True, null = True, default = None)
+	preview_news = models.TextField(max_length = 220, blank = True, null = True, default = None)
+	news = RichTextField(blank = True, null = True, default = None)
+	date = models.DateTimeField(auto_now_add = True, auto_now = False)
+	
+	def __str__(self):
+		return "%s, %s" % (self.title, self.date)
+
+
+
+
+class Video(models.Model):
+	title = models.CharField(max_length = 64, blank = True, null = True, default = None)
+	preview_video = models.TextField(max_length = 500, blank = True, null = True, default = None)
+	video = models.TextField(max_length = 500, blank = True, null = True, default = None)
+	date = models.DateTimeField(auto_now_add = True, auto_now = False)
+
+	def __str__(self):
+		return "%s, %s, %s" % (self.title, self.video, self.date)
+
+class Ads(models.Model):
+	ads = RichTextField(blank = True, null = True, default = None)
+	date = models.DateTimeField(auto_now_add = True, auto_now = False)
+	def __str__(self):
+		return "%s" % (self.ads)
+
+
+

@@ -1,0 +1,93 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+
+    <!-- Custom styles -->
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    
+
+
+
+
+</head>
+<body >
+    <div class="rf31u51">
+        
+        <div class="wrap">
+            <HEADER>
+                <nav  id = "testmenu" role="navigation">
+                  <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                      <a class="navbar-brand" id='a_title' href="/">Главная</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        <li><A id='a_title' href="{% url 'list_news' 1 %}">Новости</A></li>
+                        <li class="active"><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></li>      
+                        
+                      </ul>   
+                      
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+                </nav>
+                <div class="subline">
+                    <div class="login"><a id='a_title' href="/forum/login/">Вход</a></div>
+                </div>
+                <div class="mqk172">
+                    <div class="mqk172in">
+                        <H1>Heder Test</H1>
+                    </div>
+                </div>
+            </HEADER>
+
+
+            <div class="row" id="main">
+                <div class="col-md-9" id="left-coll">
+                    {% block list_news %} {% endblock %}                  
+                </div>
+                {% block ads %}{% endblock %}
+            </div>
+
+
+            <footer>
+                <div class="wrap">
+                    <H1>TEST</H1>
+
+                    
+                </div>
+            </footer>
+
+
+        
+
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
