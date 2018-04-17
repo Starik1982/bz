@@ -27,4 +27,8 @@ urlpatterns = [
    	url(r'^news/', include('minimum.urls')),
     url(r'^video/', include('minimum.urls')),
    	url(r'^', include('main.urls')),
+<<<<<<< HEAD
 ]
+=======
+] 
+>>>>>>> 99609447aa7228db8c0e999f194076769539c9e0
