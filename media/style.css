@@ -107,7 +107,7 @@
         background: #2b2c32;
         border-color: #2b2c32;
     }
-
+   
 
 
 
@@ -189,6 +189,18 @@
             color: #a8a8aa;
             padding: 0 15px;
     }
+
+    #video-colm{
+            background: #1b1c20;
+            border-top: 1px solid #222429;
+            border-bottom: 1px solid #000;
+            text-align: center;
+            font-size: 15px;
+            font-weight: normal;
+            min-width: 50px;
+            color: #a8a8aa;
+            padding: 0 15px;
+    }
     #between{
         
             border-top: 5px solid #121215;
@@ -218,6 +230,11 @@
             min-width: 50px;
             color: #a8a8aa;
             padding: 15 0px;
+
+    }
+
+    #testmenu{
+        background: #1b1c20;
 
     }
 

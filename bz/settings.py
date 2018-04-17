@@ -126,12 +126,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, "static",),
+  os.path.join(BASE_DIR, "static", "static_dev"),
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_prod")
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+MEDIA_ROOT = os.path.join(BASE_DIR,  "static", "media")
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_CONFIGS = {
@@ -142,9 +144,9 @@ CKEDITOR_CONFIGS = {
 
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
-try:
-   from .settings_prod import *
-except:
-    pass
+
+#try:
+#   from .settings_prod import *
+#except:
+#    pass
