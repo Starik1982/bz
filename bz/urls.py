@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.staticfiles import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
 
-
-admin.autodiscover() 
-
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
@@ -27,8 +28,9 @@ urlpatterns = [
    	url(r'^news/', include('minimum.urls')),
     url(r'^video/', include('minimum.urls')),
    	url(r'^', include('main.urls')),
-<<<<<<< HEAD
-]
-=======
+
 ] 
->>>>>>> 99609447aa7228db8c0e999f194076769539c9e0
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns() + static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+)
