@@ -146,7 +146,7 @@ CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')
 
 
 
-#try:
-#   from .settings_prod import *
-#except:
-#    pass
+try:
+   from .settings_prod import *
+except:
+    pass
