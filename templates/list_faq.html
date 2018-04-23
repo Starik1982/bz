@@ -1,0 +1,20 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% block list_news %}
+<div class="row" id="news-row">
+	{% for this_faq in list_faq %}
+	<div class="col-md-12" id="news-head">
+	  <h5>{{this_faq.title}}</h5>
+	</div>
+	
+	<div class="col-md-12" id="news-colm">
+		<p>{% autoescape off%}{{this_faq.faq}}{% endautoescape %}</p>
+		<p>{{this_faq.date}}</p>
+		
+	</div>
+	<div><p> 
+	</p></div>
+	{% endfor %}
+</div>
+
+{% endblock %}

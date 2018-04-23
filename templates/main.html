@@ -3,6 +3,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118023432-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118023432-1');
+    </script>
+
     <meta charset="UTF-8">
     <title>Битва Замоков</title>
     <meta name="description" content="Cайт гильдии __Sacred__ по игре Битва Замков / CASTLE CLASH. Свежие новости, лучшие гайды, захватывающие стримы, разнообразные герои и многое другое.">
@@ -46,7 +56,8 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav">
                         <li><A id='a_title' href="{% url 'list_news' 1 %}">Новости</A></li>
-                        <li class="active"><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></li>      
+                        <li class="active"><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></li>
+                        <li><A id='a_title' href="{% url 'faq' %}">F.A.Q.</A></li>      
                         
                       </ul>   
                       

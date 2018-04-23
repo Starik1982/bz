@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.http.response import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
-from minimum.models import News, Video, Ads
+from minimum.models import News, Video, Ads, Faq
 from django.core.paginator import Paginator
 
 # Create your views here.
@@ -36,6 +36,12 @@ def list_video (request, page_number = 1):
 	args['list_video'] = current_page.page(page_number)
 	
 	return render_to_response('list_video.html', args)
+
+def list_faq (request):
+	args = {}
+	args['list_faq'] = Faq.objects.all
+
+	return render_to_response('list_faq.html', args)
 
 
 
