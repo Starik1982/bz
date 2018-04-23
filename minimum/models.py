@@ -30,5 +30,11 @@ class Ads(models.Model):
 	def __str__(self):
 		return "%s" % (self.ads)
 
+class Faq(models.Model):
 
-
+	title = models.CharField(max_length = 200, blank = True, null = True, default = None)
+	faq = RichTextField(blank = True, null = True, default = None)
+	
+	
+	def __str__(self):
+		return "%s, %s" % (self.title, self.faq)

@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
    	url(r'^news/', include('minimum.urls')),
     url(r'^video/', include('minimum.urls')),
+    url(r'^faq/', include('minimum.urls')),
    	url(r'^', include('main.urls')),
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
