@@ -1,11 +1,10 @@
-from django.shortcuts import render
-from django.shortcuts import render_to_response
-from django.http.response import HttpResponse
+
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from django.template import Context
-from minimum.models import News, Video, Ads, Faq
+from .models import *
 from django.core.paginator import Paginator
-
+from django.shortcuts import render, render_to_response
 # Create your views here.
 
 
@@ -43,5 +42,11 @@ def list_faq (request):
 
 	return render_to_response('list_faq.html', args)
 
+
+def hiros(request):
+	args = {}
+	args['heroes'] = Hiro.objects.all
+
+	return render_to_response('heroes.html', args)
 
 

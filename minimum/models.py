@@ -38,3 +38,11 @@ class Faq(models.Model):
 	
 	def __str__(self):
 		return "%s, %s" % (self.title, self.faq)
+
+
+class Hiro(models.Model):
+	name = models.CharField(max_length=64, blank=True, null=True, default=None)
+	image = models.ImageField(upload_to='images/')
+	
+	def __str__(self):
+		return "%s, %s" % (self.name, self.image)
