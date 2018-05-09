@@ -18,3 +18,18 @@
 </div>
 
 {% endblock %}
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

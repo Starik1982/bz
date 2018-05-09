@@ -60,7 +60,7 @@ class HiroAdmin(admin.TabularInline):
     extra = 0
 
 class HiroAdmin (admin.ModelAdmin):
-    list_display = ['name', 'image'] 
+    list_display = [field.name for field  in Hiro._meta.fields] 
 
     class Meta:
         model = Hiro

@@ -39,6 +39,7 @@ def list_video (request, page_number = 1):
 def list_faq (request):
 	args = {}
 	args['list_faq'] = Faq.objects.all
+	args['ads'] = Ads.objects.order_by('-date')[:1]
 
 	return render_to_response('list_faq.html', args)
 
@@ -46,6 +47,7 @@ def list_faq (request):
 def hiros(request):
 	args = {}
 	args['heroes'] = Hiro.objects.all
+	args['ads'] = Ads.objects.order_by('-date')[:1]
 
 	return render_to_response('heroes.html', args)
 
