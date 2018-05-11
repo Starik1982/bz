@@ -11,7 +11,7 @@
       <div class="row" id="youtub-wind">
       	{% for hiro in heroes %}
         <div class="col-md-2" id="col-youtub-wind">
-          <img src="{{ hiro.image.url }}" width="100" height="100"  alt="{{ hiro.name }}" title="{{ hiro.name }}" class="img-responsive">
+          <a href="{% url 'watched_hiros' hiro.id %}"><img src="{{ hiro.image.url }}" width="100" height="100"  alt="{{ hiro.name }}" title="{{ hiro.name }}" class="img-responsive"></a>
         </div>
         {% endfor %}
       </div>

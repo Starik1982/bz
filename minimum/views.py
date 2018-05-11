@@ -52,3 +52,13 @@ def hiros(request):
 	return render_to_response('heroes.html', args)
 
 
+def get_hiro(request, hiro_id = 1):
+	
+	args = {}
+	args['get_hiros'] = Hiro.objects.get(id = hiro_id)
+	args['ads'] = Ads.objects.order_by('-date')[:1]
+	print()
+
+	
+	return render_to_response('get_hiro.html', args)
+

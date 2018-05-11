@@ -1,0 +1,123 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block list_news %}
+
+
+<div class="row" id="news-row">
+	<div class="col-md-12" id="news-head">
+	  <h3>{{ get_hiros.name }}</h3>
+	</div>
+	
+      
+      	
+        <div class="col-md-2" id="col-youtub-wind">
+          <img src="{{ get_hiros.image.url }}" width="150" height="150" class="img-responsive">
+        </div>
+        <div class="col-md-2" id="col-youtub-wind">
+          <img src="{{ get_hiros.image_evolution.url }}" width="150" height="150" class="img-responsive">
+        </div>
+
+	<div class="col-md-12" id="news-head">
+		<h5>Характеристики</h5>
+	</div>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th></th>
+	      <th><img src="{% static "images/hero1.png" %}" width="25px" height="25px"></th>
+	      <th><img src="{% static "images/hero2.png" %}" width="25px" height="25px"></th>
+	      <th><img src="{% static "images/hero3.png" %}" width="25px" height="25px"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_hp.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.hp }}</td>
+	      <td>{{ get_hiros.hp_evolution_1 }}</td>
+	      <td>{{ get_hiros.hp_evolution_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_attack.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.attack }}</td>
+	      <td>{{ get_hiros.attack_evolution_1 }}</td>
+	      <td>{{ get_hiros.attack_evolution_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_attackspeed.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_movespeed.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.running_speed }}</td>
+	      <td>{{ get_hiros.running_speed_1 }}</td>
+	      <td>{{ get_hiros.running_speed_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/arrow_up.png" %}" width="37px" height="25px"></th>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_roquet.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.accuracy }}</td>
+	      <td>{{ get_hiros.accuracy_1 }}</td>
+	      <td>{{ get_hiros.accuracy_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_dodge.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.evasion }}</td>
+	      <td>{{ get_hiros.evasion }}</td>
+	      <td>{{ get_hiros.evasion }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_crit.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_hit.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.critical_damage }}</td>
+	      <td>{{ get_hiros.critical_damage_1 }}</td>
+	      <td>{{ get_hiros.critical_damage_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_tenacity.png" %}" width="25px" height="25px"></th>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="col-md-12" id="news-head">
+		<h5>Умение</h5>
+	</div>
+
+
+	
+      
+</div>
+
+{% endblock %}
+
+
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

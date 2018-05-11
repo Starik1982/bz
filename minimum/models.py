@@ -42,8 +42,9 @@ class Faq(models.Model):
 
 class Hiro(models.Model):
 	name = models.CharField(max_length=64, blank=True, null=True, default=None)
-	image = models.ImageField(upload_to='images/')
+	image = models.ImageField(upload_to='images/', blank = True, null = True, default = None)
 	image_evolution = models.ImageField(upload_to='images/', blank = True, null = True, default = None)
+	image_skill = models.ImageField(upload_to='images/', blank = True, null = True, default = None)
 	hp = models.IntegerField(default=0)
 	hp_evolution_1 = models.IntegerField(default=0)
 	hp_evolution_2 = models.IntegerField(default=0)
