@@ -65,6 +65,7 @@ class Hiro(models.Model):
 	critical_damage_1 = models.IntegerField(default=0)
 	critical_damage_2 = models.IntegerField(default=0)
 	critical_resistance = models.IntegerField(default=0)
+	skill_title = models.TextField( blank = True, null = True, default = None)
 	skill_1 = models.TextField( blank = True, null = True, default = None)
 	skill_2 = models.TextField( blank = True, null = True, default = None)
 	skill_3 = models.TextField( blank = True, null = True, default = None)
