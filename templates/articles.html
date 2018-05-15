@@ -3,13 +3,13 @@
 
 {% block video %}
  <div class="row" id="youtub-row">
-    <div class="col-md-12" id="youtub-head">
+    <div class="col-xs-12" id="youtub-head">
       <h3><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></h3>
     </div>
-    <div class="col-md-12" id="youtub-colm">
+    <div class="col-xs-12" id="youtub-colm">
       <div class="row" id="youtub-wind">
       	{% for this_video in video %}
-        <div class="col-md-6" id="col-youtub-wind">
+        <div class="col-xs-6" id="col-youtub-wind">
           {% autoescape off%}{{this_video.video}}{% endautoescape %}
         </div>
         {% endfor %}
