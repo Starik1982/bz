@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +14,8 @@
     </script>
     <meta charset="UTF-8">
     <title>Битва Замков</title>
+    <meta name="description" content="Cайт гильдии __Sacred__ по игре Битва Замков / CASTLE CLASH. Свежие новости, лучшие гайды, захватывающие стримы, разнообразные герои и многое другое.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!--Fonts-->
@@ -25,6 +27,7 @@
 
     <!-- Custom styles -->
      <link rel="stylesheet" href="{% static 'style.css' %}">
+     <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
 
     
 
@@ -55,6 +58,7 @@
                       <ul class="nav navbar-nav">
                         <li><A id='a_title' href="{% url 'list_news' 1 %}">Новости</A></li>
                         <li class="active"><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></li>
+                        <li><A id='a_title' href="{% url 'list_hiros' %}">Гайды</A></li>
                         <li><A id='a_title' href="{% url 'faq' %}">F.A.Q.</A></li>      
                         
                       </ul>   

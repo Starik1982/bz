@@ -3,11 +3,11 @@
 {% block list_news %}
 	
 	<div class="row" id="news-row">
-	        <div class="col-md-12" id="news-head">
+	        <div class="col-xs-12" id="news-head">
 	            <h3><A id='a_title' href="{% url 'list_video' 1 %}">Видео</A></h3>
 	        </div>
 	        {% for this_video in list_video %}
-			<div class="col-md-12" id="video-colm">
+			<div class="col-xs-12" id="video-colm">
 				<h4>{{this_video.title}}</h4>
 	
 				{% autoescape off%}{{this_video.preview_video}}{% endautoescape %}

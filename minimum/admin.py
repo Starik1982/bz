@@ -53,3 +53,15 @@ class AdsAdmin (admin.ModelAdmin):
         model = Ads
 
 admin.site.register(Ads, AdsAdmin)
+
+
+class HiroAdmin(admin.TabularInline):
+    model = Hiro
+    extra = 0
+
+class HiroAdmin (admin.ModelAdmin):
+    list_display = [field.name for field  in Hiro._meta.fields] 
+
+    class Meta:
+        model = Hiro
+admin.site.register(Hiro, HiroAdmin)

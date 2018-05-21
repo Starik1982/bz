@@ -1,0 +1,178 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block list_news %}
+
+
+<div class="row" id="news-row">
+	<div class="col-xs-12" id="news-head">
+	  <h3>{{ get_hiros.name }}</h3>
+	</div>
+	
+      
+      	
+        <div class="col-xs-2" id="col-youtub-wind">
+          <img src="{{ get_hiros.image.url }}" width="150" height="150" class="img-responsive">
+        </div>
+        <div class="col-xs-2" id="col-youtub-wind">
+          <img src="{{ get_hiros.image_evolution.url }}" width="150" height="150" class="img-responsive">
+        </div>
+
+	<div class="col-xs-12" id="news-head">
+		<h5>Характеристики</h5>
+	</div>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th></th>
+	      <th><img src="{% static "images/hero1.png" %}" width="25px" height="25px"></th>
+	      <th><img src="{% static "images/hero2.png" %}" width="25px" height="25px"></th>
+	      <th><img src="{% static "images/hero3.png" %}" width="25px" height="25px"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_hp.png" %}" width="25px" height="25px" alt="Жизнь" title="Жизнь"></th>
+	      <td>{{ get_hiros.hp }}</td>
+	      <td>{{ get_hiros.hp_evolution_1 }}</td>
+	      <td>{{ get_hiros.hp_evolution_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_attack.png" %}" width="25px" height="25px" alt="Атака" title="Атака"></th>
+	      <td>{{ get_hiros.attack }}</td>
+	      <td>{{ get_hiros.attack_evolution_1 }}</td>
+	      <td>{{ get_hiros.attack_evolution_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_attackspeed.png" %}" width="25px" height="25px" alt="Скор. атаки" title="Скор. атаки"></th>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	      <td>{{ get_hiros.attack_speed }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_movespeed.png" %}" width="25px" height="25px" alt="Скор. движ." title="Скор. движ."></th>
+	      <td>{{ get_hiros.running_speed }}</td>
+	      <td>{{ get_hiros.running_speed_1 }}</td>
+	      <td>{{ get_hiros.running_speed_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/arrow_up.png" %}" width="37px" height="25px" alt="Радиус атаки" title="Радиус атаки"></th>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	      <td>{{ get_hiros.attack_radius }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_roquet.png" %}" width="25px" height="25px" alt="Точность" title="Точность"></th>
+	      <td>{{ get_hiros.accuracy }}</td>
+	      <td>{{ get_hiros.accuracy_1 }}</td>
+	      <td>{{ get_hiros.accuracy_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_dodge.png" %}" width="25px" height="25px" alt="Уклонение" title="Уклонение"></th>
+	      <td>{{ get_hiros.evasion }}</td>
+	      <td>{{ get_hiros.evasion }}</td>
+	      <td>{{ get_hiros.evasion }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_crit.png" %}" width="25px" height="25px" alt="Крит. удар" title="Крит. удар"></th>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	      <td>{{ get_hiros.critical_hit }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_hit.png" %}" width="25px" height="25px" alt="Крит. Урон" title="Крит. Урон"></th>
+	      <td>{{ get_hiros.critical_damage }}</td>
+	      <td>{{ get_hiros.critical_damage_1 }}</td>
+	      <td>{{ get_hiros.critical_damage_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{% static "images/ico_tenacity.png" %}" width="25px" height="25px" alt="Крит. Сопротивление" title="Крит. Сопротивление"></th>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	      <td>{{ get_hiros.critical_resistance }}</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<div class="col-xs-12" id="news-head">
+		<h5>Умение: {{ get_hiros.skill_title }}</h5>
+	</div>
+	<table class="table">
+	  <thead>
+	    <tr></tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="1/12" title="1/12"></th>
+	      <td>{{ get_hiros.skill_1 }}</td>	      
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="2/12" title="2/12"></th>
+	      <td>{{ get_hiros.skill_2 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="3/12" title="3/12"></th>
+	      <td>{{ get_hiros.skill_3 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="4/12" title="4/12"></th>
+	      <td>{{ get_hiros.skill_4 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="5/12" title="5/12"></th>
+	      <td>{{ get_hiros.skill_5 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="6/12" title="6/12"></th>
+	      <td>{{ get_hiros.skill_6 }}</td>	  
+	    </tr>
+	    <tr>
+	     <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="7/12" title="7/12"></th>
+	      <td>{{ get_hiros.skill_7 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="8/12" title="8/12"></th>
+	      <td>{{ get_hiros.skill_8 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="9/12" title="9/12"></th>
+	      <td>{{ get_hiros.skill_9 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="10/12" title="10/12"></th>
+	      <td>{{ get_hiros.skill_10 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="11/12" title="11/12"></th>
+	      <td>{{ get_hiros.skill_11 }}</td>	  
+	    </tr>
+	    <tr>
+	      <th scope="row"><img src="{{ get_hiros.image_skill.url }}" width="45px" height="45px" alt="12/12" title="12/12"></th>
+	      <td>{{ get_hiros.skill_12 }}</td>	  
+	    </tr>
+	  </tbody>
+	</table>
+
+
+	
+      
+</div>
+
+{% endblock %}
+
+
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,11 +1,10 @@
-from django.shortcuts import render
-from django.shortcuts import render_to_response
-from django.http.response import HttpResponse
+
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from django.template import Context
-from minimum.models import News, Video, Ads, Faq
+from .models import *
 from django.core.paginator import Paginator
-
+from django.shortcuts import render, render_to_response
 # Create your views here.
 
 
@@ -40,8 +39,26 @@ def list_video (request, page_number = 1):
 def list_faq (request):
 	args = {}
 	args['list_faq'] = Faq.objects.all
+	args['ads'] = Ads.objects.order_by('-date')[:1]
 
 	return render_to_response('list_faq.html', args)
 
 
+def hiros(request):
+	args = {}
+	args['heroes'] = Hiro.objects.all
+	args['ads'] = Ads.objects.order_by('-date')[:1]
+
+	return render_to_response('heroes.html', args)
+
+
+def get_hiro(request, hiro_id = 1):
+	
+	args = {}
+	args['get_hiros'] = Hiro.objects.get(id = hiro_id)
+	args['ads'] = Ads.objects.order_by('-date')[:1]
+	print()
+
+	
+	return render_to_response('get_hiro.html', args)
 

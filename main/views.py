@@ -21,7 +21,7 @@ def main(request):
 	args = {}	
 	args['video'] = Video.objects.order_by('-date')[:4]
 	args['bg_results'] = BgResult.objects.order_by('-bg_date', '-result')[:a]
-	args['news'] = News.objects.order_by('-date')[:5]
+	args['news'] = News.objects.order_by('-date')[:30]
 	args['ads'] = Ads.objects.order_by('-date')[:1]
 	return render_to_response('articles.html', args)
 

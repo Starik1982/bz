@@ -1,0 +1,43 @@
+
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% block list_news %}
+
+<div class="row" id="youtub-row">
+    <div class="col-xs-12" id="youtub-head">
+      <h3>Легендарные Герои</h3>
+    </div>
+    <div class="col-xs-12" id="youtub-colm">
+      <div class="row" id="youtub-wind">
+      	{% for hiro in heroes %}
+        <div class="col-xs-2" id="col-youtub-wind">
+          <a href="{% url 'watched_hiros' hiro.id %}"><img src="{{ hiro.image.url }}" width="100" height="100"  alt="{{ hiro.name }}" title="{{ hiro.name }}" class="img-responsive"></a>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+
+    
+   
+
