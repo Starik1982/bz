@@ -65,3 +65,15 @@ class HiroAdmin (admin.ModelAdmin):
     class Meta:
         model = Hiro
 admin.site.register(Hiro, HiroAdmin)
+
+class TalentAdmin(admin.TabularInline):
+    model = Talent
+    extra = 0
+
+class TalentAdmin (admin.ModelAdmin):
+    list_display = [field.name for field  in Talent._meta.fields] 
+
+    class Meta:
+        model = Talent
+admin.site.register(Talent, TalentAdmin)
+

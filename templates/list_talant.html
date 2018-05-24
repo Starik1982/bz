@@ -1,0 +1,38 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% block list_news %}
+
+<div class="row" id="youtub-row">
+    <div class="col-xs-12" id="youtub-head">
+      <h3>Таланты</h3>
+    </div>
+    <div class="col-xs-12" id="youtub-colm">
+      <div class="row" id="youtub-wind">
+      	{% for talent in talents %}
+        <div class="col-xs-2" id="col-youtub-wind">
+          <a href="{% url 'get_talant' talent.id %}"><img src="{{ talent.talent_image.url }}" width="100" height="100"  alt="{{ talent.name }}" title="{{ talent.name }}" class="img-responsive"></a>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+
+  
+
+{% endblock %}
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

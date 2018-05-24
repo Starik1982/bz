@@ -1,0 +1,82 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block list_news %}
+
+
+<div class="row" id="news-row">
+	<div class="col-xs-12" id="news-head">
+	  <h3>{{ talent.name }}</h3>
+	</div>
+	
+      
+      	
+        <div class="col-xs-2" id="col-youtub-wind">
+          <img src="{{ talent.talent_image.url }}" width="150" height="150" class="img-responsive">
+        </div>
+        
+
+	
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th>Уровень</th>
+	      <th>Описание</th>
+	      
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td>{{talent.talent_1 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>{{talent.talent_2 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>{{talent.talent_3 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">4</th>
+	      <td>{{talent.talent_4 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">5</th>
+	      <td>{{talent.talent_5 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">6</th>
+	      <td>{{talent.talent_6 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">7</th>
+	      <td>{{talent.talent_7 }}</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">8</th>
+	      <td>{{talent.talent_8 }}</td>
+	    </tr>
+	    </tbody>
+	</table>	
+      
+</div>
+
+{% endblock %}
+
+
+{% block ads %}
+
+<div class="col-md-3" id="right-coll">
+    <div class="col-md-12" id="result-head">
+        <h3>Объявления</h3>
+    </div>
+    {% for this_ads in ads %}
+	    <div class="col-md-12" id="user-result">
+	    	{% autoescape off%}{{this_ads.ads}}{% endautoescape %}
+		</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

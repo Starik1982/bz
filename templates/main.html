@@ -56,13 +56,18 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                      <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">
                         <li><A id='a_title' href="{% url 'list_news' 1 %}">Новости</A></li>
                         <li class="active"><A id='a_title' href="{% url 'list_video' 1 %}">Новые видео</A></li>
-                        <li><A id='a_title' href="{% url 'list_hiros' %}">Гайды</A></li>
-                        <li><A id='a_title' href="{% url 'faq' %}">F.A.Q.</A></li>      
-                        
-                      </ul>   
+                        <li class="dropdown">
+                            <a id='a_title' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Гайды <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a id='a_title' href="{% url 'list_hiros' %}">Легендарные герои</a></li>
+                            <li><a id='a_title' href="{% url 'list_talant' %}">Таланты</a></li>                                   
+                            </ul>
+                        </li>
+                        <li><A id='a_title' href="{% url 'faq' %}">F.A.Q.</A></li>  
+                        </ul>   
                       
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container-fluid -->

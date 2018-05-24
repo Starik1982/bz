@@ -79,3 +79,16 @@ class Hiro(models.Model):
 	skill_11 = models.TextField( blank = True, null = True, default = None)
 	skill_12 = models.TextField( blank = True, null = True, default = None)
 
+
+class Talent(models.Model):
+	name = models.CharField(max_length=64, blank=True, null=True, default=None)
+	talent_image = models.ImageField(upload_to='images/', blank = True, null = True, default = None)
+	talent_1 = models.TextField( blank = True, null = True, default = None)
+	talent_2 = models.TextField( blank = True, null = True, default = None)
+	talent_3 = models.TextField( blank = True, null = True, default = None)
+	talent_4 = models.TextField( blank = True, null = True, default = None)
+	talent_5 = models.TextField( blank = True, null = True, default = None)
+	talent_6 = models.TextField( blank = True, null = True, default = None)
+	talent_7 = models.TextField( blank = True, null = True, default = None)
+	talent_8 = models.TextField( blank = True, null = True, default = None)
+

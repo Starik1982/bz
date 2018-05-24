@@ -28,10 +28,7 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^news/', include('minimum.urls')),
-    url(r'^video/', include('minimum.urls')),
-    url(r'^faq/', include('minimum.urls')),
-    url(r'^heroes/', include('minimum.urls')),
+    url(r'^main/', include('minimum.urls')),
     url(r'^', include('main.urls')),
 ]\
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

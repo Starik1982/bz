@@ -62,3 +62,22 @@ def get_hiro(request, hiro_id = 1):
 	
 	return render_to_response('get_hiro.html', args)
 
+
+def list_talant(request):
+	args = {}
+	args['talents'] = Talent.objects.all
+	args['ads'] = Ads.objects.order_by('-date')[:1]
+
+	return render_to_response('list_talant.html', args)
+
+def get_talant(request, talent_id = 1):
+	args = {}
+	args['talent'] = Talent.objects.get(id = talent_id)
+	args['ads'] = Ads.objects.order_by('-date')[:1]
+
+	return render_to_response('get_talant.html', args)
+
+
+
+
+
