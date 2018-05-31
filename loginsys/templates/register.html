@@ -1,0 +1,38 @@
+{% extends 'in_main.html' %}
+
+
+{% block login %}
+    
+<div class="col-md-5" id="left-coll">
+    <form role="form" action="/auth/login/" method="post">
+        {% csrf_token %}
+         
+         <div class="form-group">
+              <label for="username">Логин</label>
+              <input type="mail" class="form-control" name="username" id="username" placeholder="Логин">              
+         </div>
+         <div class="form-group">
+              <label for="username">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email">              
+         </div>
+         <div class="form-group">
+              <label for="pass">Пароль</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+              
+         </div>
+         <div class="form-group">
+              <label for="pass">Пароль повторно</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+              
+         </div>
+         
+        <div>
+         <button type="submit" class="btn btn-default active">Регистрация</button>
+        </div>
+        
+    </form>
+</div>
+
+
+
+{% endblock %}
