@@ -70,9 +70,17 @@
                       
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container-fluid -->
-                </nav>
-                <div class="subline">
-                    <div class="login"><a id='a_title' href="/forum/login/">Вход</a></div>
+                </nav>                
+                    <div class="subline">
+
+                        <div class="login">
+                            {% if username %}
+                            <a id='a_title' href="/auth/logout/">Выйти ({{ username }})</a>
+                            {% else %}
+                            <a id='a_title' href="/auth/login/">Войти</a>
+                            {% endif %}
+                        </div>
+                    
                 </div>
                 
             </HEADER>
@@ -81,6 +89,7 @@
             <div class="row" id="main">
                 <div class="col-md-9" id="left-coll">
                     {% block list_news %} {% endblock %}
+                    {% block login %} {% endblock %}
                         
                 </div>
                     {% block ads %}{% endblock %}
