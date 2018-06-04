@@ -3,26 +3,26 @@
 
 {% block login %}
     
+
 <div class="col-md-5" id="left-coll">
-    <form role="form" action="/auth/login/" method="post">
+    <form role="form" action="/auth/register/" method="post">
         {% csrf_token %}
-         
          <div class="form-group">
               <label for="username">Логин</label>
-              <input type="mail" class="form-control" name="username" id="username" placeholder="Логин">              
+              <input type="text" class="form-control" name="username" id="username" placeholder="Логин">              
          </div>
-         <div class="form-group">
-              <label for="username">Email</label>
+          <div class="form-group">
+              <label for="email">Email</label>
               <input type="email" class="form-control" name="email" id="email" placeholder="Email">              
          </div>
          <div class="form-group">
               <label for="pass">Пароль</label>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+              <input type="password" class="form-control" name="password1" id="password1" placeholder="Пароль">
               
          </div>
          <div class="form-group">
-              <label for="pass">Пароль повторно</label>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+              <label for="pass">Пароль</label>
+              <input type="password" class="form-control" name="password2" id="password2" placeholder="Пароль">
               
          </div>
          
@@ -34,5 +34,9 @@
 </div>
 
 
+
+<div class="col-md-7" id="left-coll">
+	{{ login_error }}
+</div>
 
 {% endblock %}

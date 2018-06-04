@@ -3,6 +3,7 @@ from django.shortcuts import render, render_to_response, redirect
 from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
+from django.contrib.auth.models import User
 
 
 def login(request):
@@ -29,20 +30,32 @@ def logout(request):
     return redirect("/")
 
 
+
+
 def register(request):
-    args = {}
+    args = {} 
     args.update(csrf(request))
-    args['form'] = UserCreationForm()
     if request.POST:
-        newuser_form = UserCreationForm(request.POST)
-        if newuser_form.is_valid():
-            newuser_form.save()
-            newuser = auth.authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
-            auth.login(request, newuser)
-            return redirect('/')
+        username = request.POST.get('username', '')
+        email = request.POST.get('email', '')
+        password1 = request.POST.get("password1")
+        password2 = request.POST.get("password2")
+        if password1 == password2:
+            user = User.objects.create_user(username, email, password1)
+
+            user.save()
+            return render_to_response('login.html', args)
         else:
-            args['form'] = newuser_form
-    return render_to_response('register.html', args)
+            args['login_error'] = "Пароли не совпадают! Попробуйте еще раз!"
+            return render_to_response('register.html', args)
+    else:
+        return render_to_response('register.html', args)
+
+
+           
+   
+    
+
 
 
 
