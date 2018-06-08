@@ -4,7 +4,6 @@ from proom import views
 
 
 urlpatterns = [
-	
-    url(r'^(?P<personal_room_id>\d+)/$', views.personal_room, name ='room'),
+    url(r'^$', views.personal_room, name ='room'),
 
 ]

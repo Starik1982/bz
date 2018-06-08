@@ -76,7 +76,7 @@
                         <div class="subline">
                             <div class="login">
                                 {% if username %}
-                                <a id='a_title' href="/auth/logout/">Выйти</a> <a id='a_title' href="{% url 'room' 1 %}">Профиль: {{ username }}</a>
+                                <a id='a_title' href="/auth/logout/">Выйти</a> <a id='a_title' href="{% url 'room'  %}">Профиль: {{ username }}</a>
                                 {% else %}
                                 <a id='a_title' href="/auth/login/">Войти</a>
                                 {% endif %}
