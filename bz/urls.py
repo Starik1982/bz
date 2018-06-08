@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^main/', include('minimum.urls')),
     url(r'^auth/', include('loginsys.urls')),
+    url(r'^room/', include('proom.urls')),
     url(r'^', include('main.urls')),
 ]\
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

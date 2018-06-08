@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bg_result',
     'main',
     'ckeditor',
-    'loginsys'
+    'loginsys',
+    'proom',
 ]
 
 MIDDLEWARE = [

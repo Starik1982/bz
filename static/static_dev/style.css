@@ -236,6 +236,22 @@
 
     }
 
+     #yourself{
+            background: #1b1c20;
+            border-top: 1px solid #222429;
+            border-bottom: 1px solid #000;
+            text-align: justify;
+            font-size: 15px;
+            font-weight: normal;
+            min-width: 50px;
+            color: #a8a8aa;
+            padding: 15 0px;   
+
+    }
+
+
+
+
     #testmenu{
         background: #1b1c20;
 

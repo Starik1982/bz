@@ -1,0 +1,58 @@
+{% extends 'in_main.html' %}
+{% load staticfiles %}
+{% block list_news %}
+<div class="row">
+	<div class="col-md-4" id="bg-result">
+		<div class="col-md-12" id="result-head">
+			<a id='a_title' href=""  title="Изменить данные"><h4>{{ room.name }} {{ room.sername }}</h4></a>
+		</div>
+	</div>
+	<div class="col-md-8" id="bg-result">
+		<div class="col-md-12" id="result-head">
+		    <h4>О себе:</h4>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4" id="bg-result">
+	    <div class="col-md-12" id="user-result">
+			<img src="{{ room.avatar.url }}" width="100%" height="100%" class="img-responsive">					
+		</div>
+		<div class="col-md-12" id="result-head">
+			<a href="{{ room.vkurls }}"><img src="{% static "images/vk-1.svg" %}" width="25px" height="25px" alt="VK" title="VK"></a>
+			<a href="{{ room.fburls }}"><img src="{% static "images/fb.svg" %}" width="24px" height="24px" alt="Facebook" title="Facebook"></a>
+			<a href="{{ room.insturls }}"><img src="{% static "images/instagram.svg" %}" width="26px" height="26px" alt="Instagram" title="Instagram"></a>
+		</div>
+
+	</div>
+	<div class="col-md-8" id="bg-result">		
+			<div class="col-md-12" id="yourself">
+				<h5>{{ room.yourself }}</h5>
+			</div>
+			<div class="col-md-12" id="result-head">
+		    	<h4>Ник в игре:</h4>
+			</div>		
+			<div class="col-md-12" id="user-result">
+				<h5>{{ room.gild_mamber.nickname }}</h5>
+			</div>
+			<div class="col-md-12" id="result-head">
+		    	<h4>В гильдии с: </h4>
+			</div>		
+			<div class="col-md-12" id="user-result">
+				<h5> {{ room.date_of_entry }}</h5>
+			</div>
+			<div class="col-md-12" id="result-head">
+		    	<h4>Результаты битвы гильдий:</h4>
+			</div>
+			{% for result in bg_result %}
+				<div class="col-md-12" id="user-result">
+					<h6>{{result.nickname.nickname}} {{result.result}} {{result.bg_index}} {{result.bg_date}} </h6>
+				</div>
+			{% endfor %}
+
+	</div>
+
+</div>
+{% endblock %}
+
+
